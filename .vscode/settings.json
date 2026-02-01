@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Fast and Senioi.slnx"
+    "dotnet.defaultSolution": "Fast-and-Senioi.slnx"
 }
