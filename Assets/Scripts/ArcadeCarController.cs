@@ -40,4 +40,12 @@ public class ArcadeCarController : MonoBehaviour
         // Simple “ground feel”
         rb.linearDamping = dragOnGround;
     }
+
+    public void ApplySpecs(float accel, float turn, float speed)
+    {
+        acceleration = accel;
+        turnStrength = turn;
+        maxSpeed = speed;
+    }
+
 }

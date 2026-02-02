@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2cdd50bfbd421a4da804cfcba6d056e, type: 3}
+  m_Name: New Vehicle Data
+  m_EditorClassIdentifier: Assembly-CSharp::VehicleData
+  vehicleName: Pampos Paphos Taxi
+  vehiclePrefab: {fileID: 3831743767660289357, guid: 02f27663a11529541a6b1b94736e6356, type: 3}
+  acceleration: 35
+  turnStrength: 120
+  maxSpeed: 18
+  hornClip: {fileID: 8300000, guid: 24318022aad509b439463d561b6a6ed6, type: 3}

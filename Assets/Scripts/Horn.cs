@@ -18,4 +18,10 @@ public class Horn : MonoBehaviour
         if (Input.GetKeyDown(hornKey))
             source.PlayOneShot(hornClip);
     }
+
+    public void SetHorn(AudioClip clip)
+    {
+        hornClip = clip;
+    }
+
 }
