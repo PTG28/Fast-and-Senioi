@@ -74,6 +74,23 @@ public class CarSelection : MonoBehaviour
 
     public void Race()
     {
-        SceneManager.LoadSceneAsync("RaceScene");
+        StartCoroutine(LoadGame());
     }
+
+    IEnumerator LoadGame()
+    {
+        yield return SceneManager.LoadSceneAsync("Senios", LoadSceneMode.Additive);
+        yield return SceneManager.LoadSceneAsync("RaceScene", LoadSceneMode.Additive);
+
+        SceneManager.UnloadSceneAsync("SelectCarScene");
+    }
+
 }
+
+//public void Race()
+//{
+// SceneManager.LoadSceneAsync("Senios", LoadSceneMode.Additive);
+// SceneManager.LoadSceneAsync("RaceScene", LoadSceneMode.Additive);
+
+// SceneManager.UnloadSceneAsync("SelectCarScene");
+// }
