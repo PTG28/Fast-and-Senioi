@@ -105,7 +105,15 @@ public class ArcadeCarController : MonoBehaviour
         // steering
         float speedFactor = Mathf.Clamp01(flatSpeed / maxSpeed);
         float turnMult = drifting ? driftTurnMultiplier : 1f;
-        float turn = h * turnStrength * turnMult * speedFactor * Time.fixedDeltaTime;
+
+        //float turn = h * turnStrength * turnMult * speedFactor * Time.fixedDeltaTime;
+        //rb.MoveRotation(rb.rotation * Quaternion.Euler(0f, turn, 0f));
+       
+        // in reverse => turn to the other side
+        float direction = Mathf.Sign(Vector3.Dot(flatVel, transform.forward));
+        if (direction == 0) direction = 1f;
+
+        float turn = h * turnStrength * turnMult * speedFactor * direction * Time.fixedDeltaTime;
         rb.MoveRotation(rb.rotation * Quaternion.Euler(0f, turn, 0f));
 
         // lateral grip

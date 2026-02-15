@@ -1556,6 +1556,7 @@ Transform:
   - {fileID: 1222870903}
   - {fileID: 1756170266}
   - {fileID: 1411784579}
+  - {fileID: 6640936456202141003}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1122802855
@@ -3875,15 +3876,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1122802854}
     m_Modifications:
     - target: {fileID: 3831743767660289357, guid: 02f27663a11529541a6b1b94736e6356, type: 3}
       propertyPath: m_Name
       value: Pampos Paphos Taxi
       objectReference: {fileID: 0}
+    - target: {fileID: 3831743767660289357, guid: 02f27663a11529541a6b1b94736e6356, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4496499029177599991, guid: 02f27663a11529541a6b1b94736e6356, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -691
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4496499029177599991, guid: 02f27663a11529541a6b1b94736e6356, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3891,7 +3896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4496499029177599991, guid: 02f27663a11529541a6b1b94736e6356, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -261.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4496499029177599991, guid: 02f27663a11529541a6b1b94736e6356, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3935,6 +3940,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2028667743}
   m_SourcePrefab: {fileID: 100100000, guid: 02f27663a11529541a6b1b94736e6356, type: 3}
+--- !u!4 &6640936456202141003 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4496499029177599991, guid: 02f27663a11529541a6b1b94736e6356, type: 3}
+  m_PrefabInstance: {fileID: 6640936456202141002}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3957,4 +3967,3 @@ SceneRoots:
   - {fileID: 1359687544}
   - {fileID: 6487849452925509207}
   - {fileID: 2011908473}
-  - {fileID: 6640936456202141002}
