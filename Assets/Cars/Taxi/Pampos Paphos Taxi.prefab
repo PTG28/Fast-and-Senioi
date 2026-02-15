@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3765b3c322cf2144bae5c44fe2828ffc, type: 2}
     - target: {fileID: 4876713633544136408, guid: b2e7495c8175ffd4b8a7b68e9d3659a8, type: 3}
       propertyPath: m_Name
-      value: car_010 Variant
+      value: Pampos Paphos Taxi
       objectReference: {fileID: 0}
     - target: {fileID: 5252958147940957282, guid: b2e7495c8175ffd4b8a7b68e9d3659a8, type: 3}
       propertyPath: m_LocalScale.x
