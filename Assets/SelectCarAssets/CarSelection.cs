@@ -80,7 +80,7 @@ public class CarSelection : MonoBehaviour
     IEnumerator LoadGame()
     {
         yield return SceneManager.LoadSceneAsync("Senios", LoadSceneMode.Additive);
-        yield return SceneManager.LoadSceneAsync("RaceScene", LoadSceneMode.Additive);
+        
 
         SceneManager.UnloadSceneAsync("SelectCarScene");
     }
