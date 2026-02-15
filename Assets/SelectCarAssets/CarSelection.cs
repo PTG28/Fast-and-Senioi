@@ -72,10 +72,13 @@ public class CarSelection : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void Race()
-    {
+   public void Race()
+   {
+        PlayerPrefs.SetInt("carIndex", index);
+        PlayerPrefs.Save();
         StartCoroutine(LoadGame());
     }
+
 
     IEnumerator LoadGame()
     {
