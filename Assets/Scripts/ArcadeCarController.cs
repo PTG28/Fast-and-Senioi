@@ -41,11 +41,9 @@ public class ArcadeCarController : MonoBehaviour
     public float driftMaxVolume = 0.75f;
     public float driftMinPitch = 0.9f;
     public float driftMaxPitch = 1.2f;
-    public float slipForMaxDriftSound = 6f; // sideways speed that maps to max drift volume
-
+    public float slipForMaxDriftSound = 6f; 
     private Rigidbody rb;
 
-    // values computed in FixedUpdate, applied smoothly in Update
     private float speed01;
     private float throttle01;
     private float slip01;
@@ -82,7 +80,7 @@ public class ArcadeCarController : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         bool driftHeld = Input.GetKey(KeyCode.Space);
 
-        Vector3 vel = rb.linearVelocity; // if your project uses rb.linearVelocity, swap this
+        Vector3 vel = rb.linearVelocity; 
         Vector3 flatVel = new Vector3(vel.x, 0f, vel.z);
         float flatSpeed = flatVel.magnitude;
 
@@ -106,8 +104,6 @@ public class ArcadeCarController : MonoBehaviour
         float speedFactor = Mathf.Clamp01(flatSpeed / maxSpeed);
         float turnMult = drifting ? driftTurnMultiplier : 1f;
 
-        //float turn = h * turnStrength * turnMult * speedFactor * Time.fixedDeltaTime;
-        //rb.MoveRotation(rb.rotation * Quaternion.Euler(0f, turn, 0f));
        
         // in reverse => turn to the other side
         float direction = Mathf.Sign(Vector3.Dot(flatVel, transform.forward));
@@ -130,7 +126,7 @@ public class ArcadeCarController : MonoBehaviour
         bool showTrails = drifting && groundedRear && sidewaysSpeed > slipToShowTrails;
         SetTrails(showTrails);
 
-        // values for audio (0..1)
+        // values for audio
         speed01 = Mathf.Clamp01(flatSpeed / maxSpeed);
         throttle01 = Mathf.Clamp01(Mathf.Abs(v));
         slip01 = Mathf.Clamp01(sidewaysSpeed / slipForMaxDriftSound);
@@ -148,7 +144,6 @@ public class ArcadeCarController : MonoBehaviour
         {
             if (!engineSource.isPlaying) engineSource.Play();
 
-            // pitch goes with speed, volume with speed + throttle
             float targetPitch = Mathf.Lerp(engineMinPitch, engineMaxPitch, speed01);
             float targetVol = Mathf.Lerp(engineBaseVolume, engineMaxVolume, Mathf.Max(speed01, throttle01));
 
@@ -156,7 +151,7 @@ public class ArcadeCarController : MonoBehaviour
             engineSource.volume = Mathf.Lerp(engineSource.volume, targetVol, Time.deltaTime * 8f);
         }
 
-        // DRIFT (only while drifting + sliding + grounded)
+        // DRIFT
         if (driftSource && driftSource.clip)
         {
             bool shouldPlay = drifting && groundedRear && slip01 > 0.05f;
@@ -169,7 +164,6 @@ public class ArcadeCarController : MonoBehaviour
             driftSource.volume = Mathf.Lerp(driftSource.volume, targetVol, Time.deltaTime * 12f);
             driftSource.pitch = Mathf.Lerp(driftSource.pitch, targetPitch, Time.deltaTime * 12f);
 
-            // stop when faded out (saves CPU and avoids faint hiss)
             if (!shouldPlay && driftSource.isPlaying && driftSource.volume < 0.01f)
                 driftSource.Stop();
         }

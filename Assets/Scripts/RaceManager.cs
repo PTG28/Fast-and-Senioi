@@ -21,9 +21,9 @@ public class RaceManager : MonoBehaviour
     public void HitCheckpoint(int idx)
     {
         if (finished) return;
-        if (idx != nextIndex) return;   // forces correct order
-
+        if (idx != nextIndex) return;   
         nextIndex++;
+        
 
         if (nextIndex >= totalCheckpoints)
         {
